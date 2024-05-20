@@ -1,0 +1,9 @@
+@tailwind base;
+@font-face {
+  font-family: 'noor';
+  src: url('./assets/fonts/noor.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal;
+}
+@tailwind components;
+@tailwind utilities;
