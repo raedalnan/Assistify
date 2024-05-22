@@ -24,13 +24,15 @@ export default {
     colors: {
       'light-gray' : '#F2F4F6',
       "gray" : "#D9D9D9",
+      "gray-2" : "#5F5F5F",
       "blue" : "#1877F2",
-      'teal' : '#1EE3CF',
       'purple' : '#6B48FF',
+      "purple2" : "rgba(107, 72, 255, 0.2)",
       'navy' : '#161D6F',
       'dark-blue' : '#0A0E3F',
       'white' : '#fff',
-      "dark" : "#000000"
+      "dark" : "#000000" ,
+      'teal' : '#1EE3CF'
 
     }
   },

@@ -1,9 +1,10 @@
+import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginForm from '../layouts/loginForm';
-import { useNavigate  } from 'react-router-dom';
-import React, { useEffect } from 'react';
 
 const Login = () => {
   const navigate = useNavigate();
+  const formRef = useRef();
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -12,16 +13,24 @@ const Login = () => {
       }
     };
 
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        navigate('/');
+      }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [navigate]);
- 
+
   return (
     <div className='w-full h-screen bg-custom-gradient flex justify-center items-center'>
-      <LoginForm />
+      <LoginForm ref={formRef}/>
     </div>
   );
 };
